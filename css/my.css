@@ -57,13 +57,4 @@
     }
 }
 
-@font-face{
-    font-family: '华文行楷';
-    src: url('../font/myFont.ttf');
-}
-
-.diyFont{
-    font-family: '华文行楷';
-}
-
 
