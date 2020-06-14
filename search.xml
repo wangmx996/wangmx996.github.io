@@ -4,7 +4,34 @@
   
     
     <entry>
-      <title>基于Hexo的hexo-theme-matery主题搭建博客并优化2222</title>
+      <title>测试七牛云图床</title>
+      <link href="/2020/10/03/%E6%88%91%E7%9A%84%E7%AC%ACer%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2020/10/03/%E6%88%91%E7%9A%84%E7%AC%ACer%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h2><p>这是我第一篇博客</p><img src="http://www.wangmx.cn/images/872.jpg">]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring - SpringCloud </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Docker入门：（二）Docker介绍</title>
       <link href="/2020/06/14/Docker%E5%85%A5%E9%97%A8%EF%BC%9A%EF%BC%88%E4%BA%8C%EF%BC%89Docker%E4%BB%8B%E7%BB%8D/"/>
       <url>/2020/06/14/Docker%E5%85%A5%E9%97%A8%EF%BC%9A%EF%BC%88%E4%BA%8C%EF%BC%89Docker%E4%BB%8B%E7%BB%8D/</url>
       
@@ -52,33 +79,6 @@
       <categories>
           
           <category> 工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> blog </tag>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>基于Hexo的hexo-theme-matery主题搭建博客并优化2222</title>
-      <link href="/2019/10/03/%E6%88%91%E7%9A%84%E7%AC%ACer%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-      <url>/2019/10/03/%E6%88%91%E7%9A%84%E7%AC%ACer%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-      
-        <content type="html"><![CDATA[<h2 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h2><p>这是我第一篇博客</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Spring - SpringCloud </category>
           
       </categories>
       
