@@ -58,12 +58,12 @@
 }
 
 @font-face{
-    font-family: '楷体';
+    font-family: '华文行楷';
     src: url('../font/myFont.ttf');
 }
 
 .diyFont{
-    font-family: '楷体';
+    font-family: '华文行楷';
 }
 
 
