@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>SpringCloud学习笔记：（六）Config分布式配置中心</title>
+      <link href="/2020/06/20/spring/springcloud/springcloud-xue-xi-bi-ji-liu-config-fen-bu-shi-pei-zhi-zhong-xin/"/>
+      <url>/2020/06/20/spring/springcloud/springcloud-xue-xi-bi-ji-liu-config-fen-bu-shi-pei-zhi-zhong-xin/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Config分布式配置中心介绍"><a href="#Config分布式配置中心介绍" class="headerlink" title="Config分布式配置中心介绍"></a>Config分布式配置中心介绍</h2><p>Spring Cloud Config为分布式系统中的外部化配置提供服务器端和客户端支持，配置服务器为各个不同微服务应用的所有环境提供了一个中心化的外部配置<br>Spring Cloud Config分为服务端和客户端两个部分</p><h2 id="Config分布式配置中心搭建"><a href="#Config分布式配置中心搭建" class="headerlink" title="Config分布式配置中心搭建"></a>Config分布式配置中心搭建</h2><h2 id="Config客户端配置"><a href="#Config客户端配置" class="headerlink" title="Config客户端配置"></a>Config客户端配置</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring </category>
+          
+          <category> SpringCloud </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+            <tag> Config </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringBoot入门到精通：（二）启动原理解析</title>
       <link href="/2020/06/14/spring/springboot/springboot-ru-men-dao-jing-tong-er-qi-dong-yuan-li-jie-xi/"/>
       <url>/2020/06/14/spring/springboot/springboot-ru-men-dao-jing-tong-er-qi-dong-yuan-li-jie-xi/</url>
