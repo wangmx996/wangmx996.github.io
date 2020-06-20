@@ -41,7 +41,7 @@
                     
                     <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">晓&amp;静</span>
+                    <span class="logo-span" style="font-family: 楷体;">晓&amp;静</span>
                 </a>
             </div>
             
@@ -701,6 +701,63 @@
     
 
     
+        <style>
+    .mvaline-card {
+        margin: 1.5rem auto;
+    }
+
+    .mvaline-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+</style>
+
+<div class="card mvaline-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="mvcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+<!--
+<script src="https://cdn.jsdelivr.net/npm/minivaline/dist/MiniValine.min.js"></script>
+
+
+<script>
+    new MiniValine({
+        el: '#mvcomments',
+        appId: 'EV0i5nPN3uLt0RQIfKFRKG26-gzGzoHsz',
+        appKey: 'zfeOL0VKn6spX8tCSXNJBp66',
+        mode: 'DesertsP',
+        placeholder: 'Write a Comment',
+        pathname: window.location.pathname,
+        lang: '',
+        adminEmailMd5: 'de8a7aa53d07e6b6bceb45c64027763d',
+        tagMeta: ["管理员", "小伙伴", "访客"],
+        master: ["de8a7aa53d07e6b6bceb45c64027763d"],
+        friends: ["b5bd5d836c7a0091aa8473e79ed4c25e", "adb7d1cd192658a55c0ad22a3309cecf", "3ce1e6c77b4910f1871106cb30dc62b0", "cfce8dc43725cc14ffcd9fb4892d5bfc"],
+        math: true,
+        md: true,
+        enableQQ: false,
+        NoRecordIP: false,
+        visitor: true,
+        maxNest: 6,
+        pageSize: 6,
+        serverURLs: '',
+        emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
+    });
+</script>
+-->
+<script src ="https://unpkg.com/minivaline/dist/MiniValine.min.js"> </script> 
+<script> 
+      new  MiniValine({ 
+        el:'#mvcomments',
+        appId: 'EV0i5nPN3uLt0RQIfKFRKG26-gzGzoHsz',
+        appKey: 'zfeOL0VKn6spX8tCSXNJBp66',
+        mode: 'DesertsP'
+      })
+</script> 
+    
 
     
 
@@ -763,50 +820,47 @@ Build Anything with Spring Boot：Spring Boot is the starting point for building
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/13/wo-de-di-yi-pian-bo-ke/">
+                <a href="/2020/06/14/docker/docker-ru-men-er-docker-jie-shao/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="基于Hexo的hexo-theme-matery主题搭建博客并优化">
+                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="Docker入门：（二）Docker介绍">
                         
-                        <span class="card-title">基于Hexo的hexo-theme-matery主题搭建博客并优化</span>
+                        <span class="card-title">Docker入门：（二）Docker介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            我的第一篇博客这是我第一篇博客
-
+                            Docker概念
+Docker is a platform for developers and sysadmins to build, run, and share applications with containers. The us
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    工具
+                            <a href="/categories/Docker/" class="post-category">
+                                    Docker
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/blog/">
-                        <span class="chip bg-color">blog</span>
-                    </a>
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>
@@ -1043,7 +1097,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2019</span>
+            <span id="year">2020</span>
             <a href="/about" target="_blank">王明晓</a>
             
             

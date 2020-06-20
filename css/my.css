@@ -58,3 +58,13 @@
 }
 
 
+@font-face{
+    font-family: '悠然小楷';
+    src: url('./悠然小楷.ttf');
+}
+
+.diy-font{
+    font-family: '悠然小楷';
+    font-size: 45px
+}
+
