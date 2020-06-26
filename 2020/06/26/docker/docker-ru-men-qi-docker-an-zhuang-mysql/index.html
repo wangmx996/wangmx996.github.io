@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringBoot入门到精通：（一）Hello World, 晓&amp;静">
+    <meta name="keywords" content="Docker入门：（七）Docker安装Mysql, 晓&amp;静">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SpringBoot入门到精通：（一）Hello World | 晓&amp;静</title>
+    <title>Docker入门：（七）Docker安装Mysql | 晓&amp;静</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/libs/awesome/css/all.css">
@@ -246,12 +246,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SpringBoot入门到精通：（一）Hello World</h1>
+                    <h1 class="description center-align post-title">Docker入门：（七）Docker安装Mysql</h1>
                 </div>
             </div>
         </div>
@@ -368,8 +368,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/SpringBoot/">
-                                <span class="chip bg-color">SpringBoot</span>
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
                             </a>
                         
                     </div>
@@ -380,12 +380,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Spring/" class="post-category">
-                                Spring
-                            </a>
-                        
-                            <a href="/categories/Spring/SpringBoot/" class="post-category">
-                                SpringBoot
+                            <a href="/categories/Docker/" class="post-category">
+                                Docker
                             </a>
                         
                     </div>
@@ -397,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-14
+                    2020-06-26
                 </div>
                 
 
@@ -406,14 +402,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    568
+                    347
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -428,38 +424,36 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://img-blog.csdnimg.cn/20191013182144841.png" alt="在这里插入图片描述"></p>
-<h2 id="Spring-Boot-概述"><a href="#Spring-Boot-概述" class="headerlink" title="Spring Boot 概述"></a>Spring Boot 概述</h2><blockquote>
-<p><strong>Build Anything with Spring Boot：</strong><br>Spring Boot is the starting point for building all Spring-based applications. Spring Boot is designed to get you up and running as quickly as possible, with minimal upfront configuration of Spring.</p>
-</blockquote>
-<p>上面是引自官网的一段话，大概是说： Spring Boot 是所有基于 Spring 开发的项目的起点。Spring Boot 的设计是为了让你尽可能快的跑起来 Spring 应用程序并且尽可能减少你的配置文件。<br><img src="https://img-blog.csdnimg.cn/20191014202643364.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在SpringBoot官方网站上，介绍了SpringBoot的特点<br>就是快速简洁的创建独立的Spring应用程序，并且完全不需要任何配置文件<br>它使用 “习惯优于配置” （项目中存在大量的配置，此外还内置一个习惯性的配置，让你无须）的理念让你的项目快速运行起来。<br>它并不是什么新的框架，而是默认配置了很多框架的使用方式，就像 Maven 整合了所有的 jar 包一样，Spring Boot 整合了所有框架</p>
-<h2 id="SpringBoot快速搭建"><a href="#SpringBoot快速搭建" class="headerlink" title="SpringBoot快速搭建"></a>SpringBoot快速搭建</h2><p>第一步：新建项目<br>选择 Spring Initializr ，然后选择默认的 url 点击【Next】：<br><img src="https://img-blog.csdnimg.cn/20191013182424420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后修改一下项目的信息：<br><img src="https://img-blog.csdnimg.cn/2019101318255057.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>勾选项目需要的模块<br><img src="https://img-blog.csdnimg.cn/20191013182649432.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选择项目路径，修改项目名，点击Finish<br><img src="https://img-blog.csdnimg.cn/20191013182748525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>至此，项目创建完成，项目结构如下<br><img src="https://img-blog.csdnimg.cn/20191013183132126.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ul>
-<li>DemoApplication： 一个带有 main() 方法的类，用于启动应用程序</li>
-<li>DemoApplicationTests：一个空的 Junit 测试了，它加载了一个使用 Spring Boot 字典配置功能的  Spring 应用程序上下文</li>
-<li>resource文件夹目录结构<ul>
-<li>static：用于存储静态文件（css,js等）</li>
-<li>templates：用于存放模板页面</li>
-<li>application.properties：SpringBoot应用的配置文件，可以用来修改一些默认配置</li>
-</ul>
+                <h2 id="Docker安装Mysql"><a href="#Docker安装Mysql" class="headerlink" title="Docker安装Mysql"></a>Docker安装Mysql</h2><ol>
+<li>从Docker Hub拉取镜像<pre class=" language-java"><code class="language-java"> docker pull mysql</code></pre>
 </li>
-<li>pom.xml： Maven 构建说明文件</li>
-</ul>
-<p>第一步：Hello World<br>在【cn.example.demo】包下新建一个package【controller】，新建类【HelloWorldController】：</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorldController</span> <span class="token punctuation">{</span>
+<li>运行容器<pre class=" language-java"><code class="language-java">     docker run <span class="token operator">-</span>p <span class="token number">3306</span><span class="token operator">:</span><span class="token number">3306</span> <span class="token operator">--</span>name mysql \
+     <span class="token operator">-</span>v <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>docker<span class="token operator">/</span>mysql<span class="token operator">/</span>data<span class="token operator">:</span><span class="token operator">/</span>var<span class="token operator">/</span>lib<span class="token operator">/</span>mysql \
+     <span class="token operator">-</span>v <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>docker<span class="token operator">/</span>mysql<span class="token operator">/</span>conf<span class="token operator">/</span>my<span class="token punctuation">.</span>cnf<span class="token operator">:</span><span class="token operator">/</span>etc<span class="token operator">/</span>mysql<span class="token operator">/</span>conf<span class="token punctuation">.</span>d \
+     <span class="token operator">-</span>v <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>docker<span class="token operator">/</span>mysql<span class="token operator">/</span>logs<span class="token operator">:</span><span class="token operator">/</span>logs \
+     <span class="token operator">-</span>e MYSQL_ROOT_PASSWORD<span class="token operator">=</span><span class="token number">123456</span> \
+     <span class="token operator">-</span>d mysql \
+     <span class="token operator">--</span>lower_case_table_names<span class="token operator">=</span><span class="token number">1</span>
+注：    <span class="token operator">==</span><span class="token operator">-</span>\<span class="token operator">-</span>lower_case_table_names<span class="token operator">=</span><span class="token number">1</span>
+表示表名忽略大小写，如果不加这个，mysql8安装后默认表名区分大小写<span class="token operator">==</span>
+</code></pre>
+</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20200404171417657.png" alt="在这里插入图片描述"><br>容器运行成功</p>
+<h2 id="Navicat连接Mysql"><a href="#Navicat连接Mysql" class="headerlink" title="Navicat连接Mysql"></a>Navicat连接Mysql</h2><p>使用Navicat连接Mysql，我们会发现连接不上，因为在mysql5.8从开始将caching_sha2_password作为默认的身份验证插件，而在MySQL 5.7中，默认的身份验证插件是 mysql_native_password！这个时候可以修改 user 表中的密码规则，回到mysql5.7的密码验证格式。<br><img src="https://img-blog.csdnimg.cn/20200404171502988.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200404171706572.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>root 用户的验证器插件为 caching_sha2_password</p>
+<h4 id="修改身份验证类型-修改密码"><a href="#修改身份验证类型-修改密码" class="headerlink" title="修改身份验证类型(修改密码)"></a>修改身份验证类型(修改密码)</h4><pre><code>mysql&gt; ALTER USER &#39;root&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;123456&#39;;
+Query OK, 0 rows affected (0.35 sec)
 
-    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> String <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-
-        <span class="token keyword">return</span> <span class="token string">"Hello World !!!"</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>第三步：利用 IDEA 启动 Spring Boot<br>我们回到 DemoApplication 这个类中，然后右键点击运行：<br><img src="https://img-blog.csdnimg.cn/2019101318443227.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ul>
-<li><strong>注意</strong>：我们之所以在上面的项目中没有手动的去配置 Tomcat 服务器，是因为 Spring Boot 内置了 Tomcat<br>启动成功<br><img src="https://img-blog.csdnimg.cn/2019101318460481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到我们的 Tomcat 运行在 8080 端口，我们来访问 “/hello” 地址试一下：<br><img src="https://img-blog.csdnimg.cn/20191013184646707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>至此，一个SpringBoot的HelloWorld完成</li>
-</ul>
+mysql&gt; ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;123456&#39;;
+Query OK, 0 rows affected (0.40 sec)</code></pre><h4 id="刷新权限"><a href="#刷新权限" class="headerlink" title="刷新权限"></a>刷新权限</h4><pre><code>mysql&gt; FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.05 sec)
+</code></pre><h4 id="查看用户的验证器是否修改"><a href="#查看用户的验证器是否修改" class="headerlink" title="查看用户的验证器是否修改"></a>查看用户的验证器是否修改</h4><p><img src="https://img-blog.csdnimg.cn/20200404191836910.png" alt="在这里插入图片描述"></p>
+<h4 id="连接成功"><a href="#连接成功" class="headerlink" title="连接成功"></a>连接成功</h4><p><img src="https://img-blog.csdnimg.cn/20200404171939938.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="Docker启动时自动启动容器"><a href="#Docker启动时自动启动容器" class="headerlink" title="Docker启动时自动启动容器"></a>Docker启动时自动启动容器</h2><p>在运行docker容器时可以加如下参数来保证每次docker服务重启后容器也自动重启：</p>
+<pre class=" language-java"><code class="language-java">docker run <span class="token operator">--</span>restart<span class="token operator">=</span>always</code></pre>
+<p>如果已经启动了则可以使用如下命令：</p>
+<pre class=" language-java"><code class="language-java">docker update <span class="token operator">--</span>restart<span class="token operator">=</span>always <span class="token operator">&lt;</span>CONTAINER ID<span class="token operator">></span></code></pre>
 
             </div>
             <hr/>
@@ -485,7 +479,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.wangmx.cn/2020/06/14/spring/springboot/springboot-ru-men-dao-jing-tong-yi-hello-world/">https://www.wangmx.cn/2020/06/14/spring/springboot/springboot-ru-men-dao-jing-tong-yi-hello-world/</a>
+                    <a href="https://www.wangmx.cn/2020/06/26/docker/docker-ru-men-qi-docker-an-zhuang-mysql/">https://www.wangmx.cn/2020/06/26/docker/docker-ru-men-qi-docker-an-zhuang-mysql/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -523,8 +517,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/SpringBoot/">
-                                    <span class="chip bg-color">SpringBoot</span>
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
                                 </a>
                             
                         </div>
@@ -753,38 +747,35 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/14/spring/springboot/springboot-ru-men-dao-jing-tong-er-qi-dong-yuan-li-jie-xi/">
+                <a href="/2020/06/26/docker/docker-ru-men-ba-ben-di-jing-xiang-fa-bu-dao-a-li-yun/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="SpringBoot入门到精通：（二）启动原理解析">
+                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="Docker入门：（八）本地镜像发布到阿里云">
                         
-                        <span class="card-title">SpringBoot入门到精通：（二）启动原理解析</span>
+                        <span class="card-title">Docker入门：（八）本地镜像发布到阿里云</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-前言前面见识了SpringBoot为我们做的自动配置，非常方便快捷，相比于之前繁琐的配置文件，简直不要太优秀，让我们不禁好奇，到底是怎么做到的呢，让我们一起来探究一下
-
-正文我们开发任何一个Spring Boot项目，都会用到如下的启动类
+                            创建阿里云仓库
+阿里云操作指南
+登录阿里云Docker Registry
+ $ sudo docker login --username=*** registry.cn-hangzhou.aliyuncs.com
+ 用于登录的用户名为阿里云
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-26
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Spring/" class="post-category">
-                                    Spring
-                                </a>
-                            
-                            <a href="/categories/Spring/SpringBoot/" class="post-category">
-                                    SpringBoot
+                            <a href="/categories/Docker/" class="post-category">
+                                    Docker
                                 </a>
                             
                             
@@ -794,8 +785,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SpringBoot/">
-                        <span class="chip bg-color">SpringBoot</span>
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
                     </a>
                     
                 </div>
@@ -809,25 +800,25 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/14/docker/docker-ru-men-er-docker-jie-shao/">
+                <a href="/2020/06/26/docker/docker-ru-men-wu-rong-qi-shu-ju-quan/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="Docker入门：（二）Docker介绍">
+                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="Docker入门：（五）容器数据券">
                         
-                        <span class="card-title">Docker入门：（二）Docker介绍</span>
+                        <span class="card-title">Docker入门：（五）容器数据券</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Docker概念
-Docker is a platform for developers and sysadmins to build, run, and share applications with containers. The us
+                            概念Docker中的数据可以存储在类似于虚拟机磁盘的介质中，在Docker中称为数据卷（Data Volume）。数据卷可以用来存储Docker应用的数据，也可以用来在Docker容器间进行数据共享。
+Docker的理念将运行的环境打包形成
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-26
                             </span>
                         <span class="publish-author">
                             

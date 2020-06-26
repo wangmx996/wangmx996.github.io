@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringBoot入门到精通：（一）Hello World, 晓&amp;静">
+    <meta name="keywords" content="Docker入门：（九）Docker可视化工具, 晓&amp;静">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SpringBoot入门到精通：（一）Hello World | 晓&amp;静</title>
+    <title>Docker入门：（九）Docker可视化工具 | 晓&amp;静</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/libs/awesome/css/all.css">
@@ -246,12 +246,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SpringBoot入门到精通：（一）Hello World</h1>
+                    <h1 class="description center-align post-title">Docker入门：（九）Docker可视化工具</h1>
                 </div>
             </div>
         </div>
@@ -368,8 +368,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/SpringBoot/">
-                                <span class="chip bg-color">SpringBoot</span>
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
                             </a>
                         
                     </div>
@@ -380,12 +380,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Spring/" class="post-category">
-                                Spring
-                            </a>
-                        
-                            <a href="/categories/Spring/SpringBoot/" class="post-category">
-                                SpringBoot
+                            <a href="/categories/Docker/" class="post-category">
+                                Docker
                             </a>
                         
                     </div>
@@ -397,7 +393,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-14
+                    2020-06-26
                 </div>
                 
 
@@ -406,14 +402,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    568
+                    250
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -428,38 +424,34 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://img-blog.csdnimg.cn/20191013182144841.png" alt="在这里插入图片描述"></p>
-<h2 id="Spring-Boot-概述"><a href="#Spring-Boot-概述" class="headerlink" title="Spring Boot 概述"></a>Spring Boot 概述</h2><blockquote>
-<p><strong>Build Anything with Spring Boot：</strong><br>Spring Boot is the starting point for building all Spring-based applications. Spring Boot is designed to get you up and running as quickly as possible, with minimal upfront configuration of Spring.</p>
-</blockquote>
-<p>上面是引自官网的一段话，大概是说： Spring Boot 是所有基于 Spring 开发的项目的起点。Spring Boot 的设计是为了让你尽可能快的跑起来 Spring 应用程序并且尽可能减少你的配置文件。<br><img src="https://img-blog.csdnimg.cn/20191014202643364.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在SpringBoot官方网站上，介绍了SpringBoot的特点<br>就是快速简洁的创建独立的Spring应用程序，并且完全不需要任何配置文件<br>它使用 “习惯优于配置” （项目中存在大量的配置，此外还内置一个习惯性的配置，让你无须）的理念让你的项目快速运行起来。<br>它并不是什么新的框架，而是默认配置了很多框架的使用方式，就像 Maven 整合了所有的 jar 包一样，Spring Boot 整合了所有框架</p>
-<h2 id="SpringBoot快速搭建"><a href="#SpringBoot快速搭建" class="headerlink" title="SpringBoot快速搭建"></a>SpringBoot快速搭建</h2><p>第一步：新建项目<br>选择 Spring Initializr ，然后选择默认的 url 点击【Next】：<br><img src="https://img-blog.csdnimg.cn/20191013182424420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后修改一下项目的信息：<br><img src="https://img-blog.csdnimg.cn/2019101318255057.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>勾选项目需要的模块<br><img src="https://img-blog.csdnimg.cn/20191013182649432.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选择项目路径，修改项目名，点击Finish<br><img src="https://img-blog.csdnimg.cn/20191013182748525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>至此，项目创建完成，项目结构如下<br><img src="https://img-blog.csdnimg.cn/20191013183132126.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ul>
-<li>DemoApplication： 一个带有 main() 方法的类，用于启动应用程序</li>
-<li>DemoApplicationTests：一个空的 Junit 测试了，它加载了一个使用 Spring Boot 字典配置功能的  Spring 应用程序上下文</li>
-<li>resource文件夹目录结构<ul>
-<li>static：用于存储静态文件（css,js等）</li>
-<li>templates：用于存放模板页面</li>
-<li>application.properties：SpringBoot应用的配置文件，可以用来修改一些默认配置</li>
-</ul>
+                <h2 id="常用工具介绍"><a href="#常用工具介绍" class="headerlink" title="常用工具介绍"></a>常用工具介绍</h2><p>当Docker部署规模住键变大后，可视化监控容器环境得性能和健康状态将会变得越来越重要。Docker的图形化管理工具、提供状态显示面板、应用模板快速部署、容器镜像网络数据卷的基本操作（包括上传下载镜像、创建容器等操作）、事件日志、容器控制台操作、Swarm集群和服务等集中管理和操作、登录用户管理和控制等功能。<br>常用工具：</p>
+<ol>
+<li>docker UI</li>
+<li>shipyard（停止维护）</li>
+<li>portainer</li>
+<li>daocloud(收费)</li>
+</ol>
+<h2 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h2><h4 id="docker-UI"><a href="#docker-UI" class="headerlink" title="docker UI"></a>docker UI</h4><ol>
+<li><p>拉取Docker UI镜像</p>
+<pre class=" language-java"><code class="language-java"> docker pull uifd<span class="token operator">/</span>ui<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">-</span>docker</code></pre>
 </li>
-<li>pom.xml： Maven 构建说明文件</li>
-</ul>
-<p>第一步：Hello World<br>在【cn.example.demo】包下新建一个package【controller】，新建类【HelloWorldController】：</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorldController</span> <span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> String <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-
-        <span class="token keyword">return</span> <span class="token string">"Hello World !!!"</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>第三步：利用 IDEA 启动 Spring Boot<br>我们回到 DemoApplication 这个类中，然后右键点击运行：<br><img src="https://img-blog.csdnimg.cn/2019101318443227.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ul>
-<li><strong>注意</strong>：我们之所以在上面的项目中没有手动的去配置 Tomcat 服务器，是因为 Spring Boot 内置了 Tomcat<br>启动成功<br><img src="https://img-blog.csdnimg.cn/2019101318460481.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到我们的 Tomcat 运行在 8080 端口，我们来访问 “/hello” 地址试一下：<br><img src="https://img-blog.csdnimg.cn/20191013184646707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>至此，一个SpringBoot的HelloWorld完成</li>
-</ul>
+<li><p>创建容器</p>
+<pre class=" language-java"><code class="language-java"> docker run <span class="token operator">-</span>d <span class="token operator">-</span>p <span class="token number">9000</span><span class="token operator">:</span><span class="token number">9000</span> <span class="token operator">--</span>privileged \
+ <span class="token operator">-</span>v <span class="token operator">/</span>var<span class="token operator">/</span>run<span class="token operator">/</span>docker<span class="token punctuation">.</span>sock<span class="token operator">:</span><span class="token operator">/</span>var<span class="token operator">/</span>run<span class="token operator">/</span>docker<span class="token punctuation">.</span>sock \
+ uifd<span class="token operator">/</span>ui<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">-</span>docker</code></pre>
+<p> <img src="https://img-blog.csdnimg.cn/20200405130525633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="portainer使用"><a href="#portainer使用" class="headerlink" title="portainer使用"></a>portainer使用</h4></li>
+<li><p>拉取镜像</p>
+<pre class=" language-java"><code class="language-java"> docker pull portainer<span class="token operator">/</span>portainer</code></pre>
+</li>
+<li><p>创建容器</p>
+<pre class=" language-java"><code class="language-java"> docker run <span class="token operator">-</span>d <span class="token operator">-</span>p <span class="token number">9001</span><span class="token operator">:</span><span class="token number">9000</span> \
+ <span class="token operator">-</span>v <span class="token operator">/</span>var<span class="token operator">/</span>run<span class="token operator">/</span>docker<span class="token punctuation">.</span>sock<span class="token operator">:</span><span class="token operator">/</span>var<span class="token operator">/</span>run<span class="token operator">/</span>docker<span class="token punctuation">.</span>sock \
+ portainer<span class="token operator">/</span>portainer</code></pre>
+<p> portainer需要设置密码,相对比docker UI安全<br><img src="https://img-blog.csdnimg.cn/20200405130916793.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p> 进入之后，如果是本地，选取本地<br> <img src="https://img-blog.csdnimg.cn/2020040513103832.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> <img src="https://img-blog.csdnimg.cn/20200405131108272.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -485,7 +477,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.wangmx.cn/2020/06/14/spring/springboot/springboot-ru-men-dao-jing-tong-yi-hello-world/">https://www.wangmx.cn/2020/06/14/spring/springboot/springboot-ru-men-dao-jing-tong-yi-hello-world/</a>
+                    <a href="https://www.wangmx.cn/2020/06/26/docker/docker-ru-men-jiu-docker-ke-shi-hua-gong-ju/">https://www.wangmx.cn/2020/06/26/docker/docker-ru-men-jiu-docker-ke-shi-hua-gong-ju/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -523,8 +515,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/SpringBoot/">
-                                    <span class="chip bg-color">SpringBoot</span>
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
                                 </a>
                             
                         </div>
@@ -753,38 +745,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/14/spring/springboot/springboot-ru-men-dao-jing-tong-er-qi-dong-yuan-li-jie-xi/">
+                <a href="/2020/06/26/docker/docker-ru-men-liu-dockerfile/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="SpringBoot入门到精通：（二）启动原理解析">
+                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="Docker入门：（六）Dockerfile">
                         
-                        <span class="card-title">SpringBoot入门到精通：（二）启动原理解析</span>
+                        <span class="card-title">Docker入门：（六）Dockerfile</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-前言前面见识了SpringBoot为我们做的自动配置，非常方便快捷，相比于之前繁琐的配置文件，简直不要太优秀，让我们不禁好奇，到底是怎么做到的呢，让我们一起来探究一下
-
-正文我们开发任何一个Spring Boot项目，都会用到如下的启动类
+                            Dockerfile什么是DockerfileDockerfile是用来构建Docker镜像的构建文件，是由一系列参数构成的脚本使用命令build来创建新的image，默认是当前目录下名为Dockerfile的文件，可以使用-f 路径来指定
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-26
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Spring/" class="post-category">
-                                    Spring
-                                </a>
-                            
-                            <a href="/categories/Spring/SpringBoot/" class="post-category">
-                                    SpringBoot
+                            <a href="/categories/Docker/" class="post-category">
+                                    Docker
                                 </a>
                             
                             
@@ -794,8 +779,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SpringBoot/">
-                        <span class="chip bg-color">SpringBoot</span>
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                    <a href="/tags/Dockerfile/">
+                        <span class="chip bg-color">Dockerfile</span>
                     </a>
                     
                 </div>
@@ -809,25 +798,28 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/14/docker/docker-ru-men-er-docker-jie-shao/">
+                <a href="/2020/06/26/docker/docker-ru-men-ba-ben-di-jing-xiang-fa-bu-dao-a-li-yun/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="Docker入门：（二）Docker介绍">
+                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="Docker入门：（八）本地镜像发布到阿里云">
                         
-                        <span class="card-title">Docker入门：（二）Docker介绍</span>
+                        <span class="card-title">Docker入门：（八）本地镜像发布到阿里云</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Docker概念
-Docker is a platform for developers and sysadmins to build, run, and share applications with containers. The us
+                            创建阿里云仓库
+阿里云操作指南
+登录阿里云Docker Registry
+ $ sudo docker login --username=*** registry.cn-hangzhou.aliyuncs.com
+ 用于登录的用户名为阿里云
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-26
                             </span>
                         <span class="publish-author">
                             
