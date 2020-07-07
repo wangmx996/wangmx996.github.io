@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Nginx学习笔记, 晓&amp;静">
+    <meta name="keywords" content="Nginx入门, 晓&amp;静">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Nginx学习笔记 | 晓&amp;静</title>
+    <title>Nginx入门 | 晓&amp;静</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/libs/awesome/css/all.css">
@@ -246,12 +246,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Nginx学习笔记</h1>
+                    <h1 class="description center-align post-title">Nginx入门</h1>
                 </div>
             </div>
         </div>
@@ -410,14 +410,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    8.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    32 分
                 </div>
                 
 
@@ -432,17 +432,17 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Nginx是什么"><a href="#Nginx是什么" class="headerlink" title="Nginx是什么"></a>Nginx是什么</h2><p>Nginx是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。</p>
+                <p><a href="https://github.com/krislinzhao/StudyNotes/blob/master/Nginx/01-Nginx%E7%AE%80%E4%BB%8B.md" target="_blank" rel="noopener">https://github.com/krislinzhao/StudyNotes/blob/master/Nginx/01-Nginx%E7%AE%80%E4%BB%8B.md</a></p>
+<h1 id="1、什么是Nginx"><a href="#1、什么是Nginx" class="headerlink" title="1、什么是Nginx"></a>1、什么是Nginx</h1><p>Nginx (“engine x”) 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器特点是占有内存少，并发能力强。。</p>
 <p>Nginx是一款轻量级的Web服务器/反向代理服务器以及电子邮件代理服务器，并在一个BSD-like协议下发行。由俄罗斯的程序设计师lgor Sysoev所开发，供俄国大型的入口网站及搜索引擎Rambler使用。其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好。</p>
 <p>Nginx相较于Apache\lighttpd具有占有内存少，稳定性高等优势，并且依靠并发能力强，丰富的模块库以及友好灵活的配置而闻名。在Linux操作系统下，nginx使用epoll事件模型,得益于此，nginx在Linux操作系统下效率相当高。同时Nginx在OpenBSD或FreeBSD操作系统上采用类似于Epoll的高效事件模型kqueue.</p>
-<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h3><p>在客户端(浏览器)配置代理服务器，通过代理服务器进行互联网访问</p>
-<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p>其实客户端对代理是无感知的，因为客户端不需要任何配置就可以访问，我们只需要将请求发送到反向代理服务器，由反向代理服务器去选择目标服务器获取数据后，在返回给客户端，此时反向代理服务器和目标服务器对外就是一个服务器，暴露的是代理服务器地址，隐藏了真实服务器 IP 地址。<br><img src="https://img-blog.csdnimg.cn/2020070622063092.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
-<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>客户端发送多个请求到服务器，服务器处理请求，有一些可能要与数据库进行交互，服务器处理完毕后，再将结果返回给客户端。</p>
-<p>这种架构模式对于早期的系统相对单一，并发请求相对较少的情况下是比较适合的，成本也低。但是随着信息数量的不断增长，访问量和数据量的飞速增长，以及系统业务的复杂度增加，这种架构会造成服务器相应客户端的请求日益缓慢，并发量特别大的时候，还容易造成服务器直接崩溃。很明显这是由于服务器性能的瓶颈造成的问题，那么如何解决这种情况呢？</p>
-<p>我们首先想到的可能是升级服务器的配置，比如提高 CPU 执行频率，加大内存等提高机器的物理性能来解决此问题，但是我们知道摩尔定律的日益失效，硬件的性能提升已经不能满足日益提升的需求了。最明显的一个例子，天猫双十一当天，某个热销商品的瞬时访问量是极其庞大的，那么类似上面的系统架构，将机器都增加到现有的顶级物理配置，都是不能够满足需求的。那么怎么办呢？</p>
-<p>上面的分析我们去掉了增加服务器物理配置来解决问题的办法，也就是说纵向解决问题的办法行不通了，那么横向增加服务器的数量呢？这时候集群的概念产生了，单个服务器解决不了，我们增加服务器的数量，然后将请求分发到各个服务器上，将原先请求集中到单个服务器上的情况改为将请求分发到多个服务器上，将负载分发到不同的服务器，也就是我们所说的负载均衡<br><img src="https://img-blog.csdnimg.cn/20200706220045249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
-<h3 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h3><p>为了加快网站的解析速度，可以把动态页面和静态页面由不同的服务器来解析，加快解析速度。降低原来单个服务器的压力。</p>
-<h2 id="Linux安装Nginx"><a href="#Linux安装Nginx" class="headerlink" title="Linux安装Nginx"></a>Linux安装Nginx</h2><p>1.安装nginx相关依赖</p>
+<h1 id="2、正向代理和反向代理"><a href="#2、正向代理和反向代理" class="headerlink" title="2、正向代理和反向代理"></a>2、正向代理和反向代理</h1><h2 id="2-1-正向代理"><a href="#2-1-正向代理" class="headerlink" title="2.1 正向代理"></a>2.1 正向代理</h2><p>　　我们常说的代理也就是只正向代理，正向代理是一个位于客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。客户端必须要进行一些特别的设置才能使用正向代理</p>
+<img src="https://image.wangmx.cn/images/Nginx/00001.jpg">
+<h2 id="2-2-反向代理"><a href="#2-2-反向代理" class="headerlink" title="2.2 反向代理"></a>2.2 反向代理</h2><p>　　反向代理客户端对代理是无感知的，因为客户端不需要任何配置就可以访问，我们只需要将请求发送到反向代理服务器，由反向代理服务器去选择目标服务器获取数据后，在返回给客户端，此时反向代理服务器和目标服务器对外就是一个服务器，暴露的是代理服务器地址，隐藏了真实服务器 IP 地址。</p>
+<img src="https://image.wangmx.cn/images/Nginx/00002.jpg">
+
+<h2 id="2-3-正向代理和反向代理的区别"><a href="#2-3-正向代理和反向代理的区别" class="headerlink" title="2.3 正向代理和反向代理的区别"></a>2.3 正向代理和反向代理的区别</h2><p>两者的区别在于代理的对象不一样：正向代理代理的对象是客户端，正向代理隐藏真实客户端，服务端不知道实际发起请求的客户端。反向代理代理的对象是服务端，反向代理隐藏真实服务端，客户端不知道实际提供服务的服务端</p>
+<h1 id="3、Nginx安装"><a href="#3、Nginx安装" class="headerlink" title="3、Nginx安装"></a>3、Nginx安装</h1><h2 id="3-1-Linux安装Nginx"><a href="#3-1-Linux安装Nginx" class="headerlink" title="3.1 Linux安装Nginx"></a>3.1 Linux安装Nginx</h2><h3 id="（1）安装nginx相关依赖"><a href="#（1）安装nginx相关依赖" class="headerlink" title="（1）安装nginx相关依赖"></a>（1）安装nginx相关依赖</h3><p>安装命令：</p>
 <pre class=" language-shell"><code class="language-shell">yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel pcre-devel</code></pre>
 <p>所需依赖的作用：</p>
 <ul>
@@ -451,69 +451,413 @@
 <li>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。<br>nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http），所以需要在 Centos 安装 OpenSSL 库。</li>
 <li>PCRE(Perl Compatible Regular Expressions) 是一个Perl库，包括 perl 兼容的正则表达式库。nginx 的 http 模块使用 pcre 来解析正则表达式，所以需要在 linux 上安装 pcre 库，pcre-devel 是使用 pcre 开发的一个二次开发库。nginx也需要此库</li>
 </ul>
-<p>2.创建nginx目录，并进入目录</p>
+<p>（2）创建nginx目录，并进入目录</p>
 <pre class=" language-shell"><code class="language-shell">mkdir /usr/local/nginx
 cd /usr/local/nginx</code></pre>
-<p>3：下载并解压nginx</p>
-<pre class=" language-shell"><code class="language-shell">wget https://nginx.org/download/nginx-1.14.2.tar.gz 
+<h3 id="（3）下载并解压nginx"><a href="#（3）下载并解压nginx" class="headerlink" title="（3）下载并解压nginx"></a>（3）下载并解压nginx</h3><pre class=" language-shell"><code class="language-shell">wget https://nginx.org/download/nginx-1.14.2.tar.gz 
 tar -zxvf nginx-1.14.2.tar.gz   </code></pre>
-<p>4：进入安装包目录</p>
-<pre class=" language-shell"><code class="language-shell">cd nginx-1.14.2</code></pre>
-<p>5：编译安装nginx，默认安装到 /usr/local/nginx中</p>
-<pre class=" language-shell"><code class="language-shell">./configure
+<h3 id="（4）进入安装包目录"><a href="#（4）进入安装包目录" class="headerlink" title="（4）进入安装包目录"></a>（4）进入安装包目录</h3><pre class=" language-shell"><code class="language-shell">cd nginx-1.14.2</code></pre>
+<h3 id="（5）编译安装nginx，默认安装到-usr-local-nginx中"><a href="#（5）编译安装nginx，默认安装到-usr-local-nginx中" class="headerlink" title="（5）编译安装nginx，默认安装到 /usr/local/nginx中"></a>（5）编译安装nginx，默认安装到 /usr/local/nginx中</h3><pre class=" language-shell"><code class="language-shell">./configure
 make && make install</code></pre>
-<h3 id="启动Nginx并访问"><a href="#启动Nginx并访问" class="headerlink" title="启动Nginx并访问"></a>启动Nginx并访问</h3><pre class=" language-shell"><code class="language-shell">cd /usr/local/nginx/sbin
+<p>至此，Nginx安装成功</p>
+<h2 id="3-2-启动Nginx并访问"><a href="#3-2-启动Nginx并访问" class="headerlink" title="3.2 启动Nginx并访问"></a>3.2 启动Nginx并访问</h2><h3 id="（1）启动Nginx"><a href="#（1）启动Nginx" class="headerlink" title="（1）启动Nginx"></a>（1）启动Nginx</h3><pre class=" language-shell"><code class="language-shell">cd /usr/local/nginx/sbin
 ./nginx   # 启动命令</code></pre>
-<p>查看nginx进程</p>
-<pre class=" language-shell"><code class="language-shell">ps aux|grep nginx</code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20200703101434763.png" alt="Nginx进程"><br>输入ip地址，可以访问到下图所示页面，nginx安装成功<br><img src="https://img-blog.csdnimg.cn/20200703101610268.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>以下所有命令，都要在/usr/local/nginx/sbin目录下执行</p>
-<ol>
-<li>启动命令<pre class=" language-shell"><code class="language-shell"> ./nginx   # 启动命令</code></pre>
-</li>
-<li>停止命令<pre class=" language-shell"><code class="language-shell"> ./nginx -s stop # 快速停止命令，不管有没有正在处理的请求
- ./nginx -s quit # 正常停止命令，在退出前完成已经接受的连接请求。</code></pre>
-</li>
-<li>重启命令<pre class=" language-shell"><code class="language-shell"> ./nginx -s reload</code></pre>
-</li>
-<li>查看版本<pre class=" language-shell"><code class="language-shell">./nginx -v</code></pre>
-<h2 id="Nginx配置文件解析"><a href="#Nginx配置文件解析" class="headerlink" title="Nginx配置文件解析"></a>Nginx配置文件解析</h2></li>
-</ol>
-<p>nginx 安装目录下，其默认的配置文件都放在这个目录的 conf 目录下，而主配置文件nginx.conf 也在其中，后续对 nginx 的使用基本上都是对此配置文件进行相应的修改。</p>
-<p>去掉#号注释的内容，精简之后的内容如下：<br><img src="https://img-blog.csdnimg.cn/20200703103944119.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""><br>根据上述文件，我们可以很明显的将 nginx.conf 配置文件分为三部分：</p>
-<p>第一部分：全局块</p>
-<p>从配置文件开始到 events 块之间的内容，主要会设置一些影响 nginx 服务器整体运行的配置指令，主要包括配置运行 Nginx 服务器的用户（组）、允许生成的 worker process 数，进程 PID 存放路径、日志存放路径和类型以及配置文件的引入等。<br>这是 Nginx 服务器并发处理服务的关键配置，worker_processes 值越大，可以支持的并发处理量也越多，但是会受到硬件、软件等设备的制约</p>
-<p>第二部分：events 块</p>
-<p>events 块涉及的指令主要影响 Nginx 服务器与用户的网络连接，常用的设置包括是否开启对多 work process 下的网络连接进行序列化，是否允许同时接收多个网络连接，选取哪种事件驱动模型来处理连接请求，每个 word process 可以同时支持的最大连接数等。</p>
-<p>上述例子就表示每个 work process 支持的最大连接数为 1024. 这部分的配置对 Nginx 的性能影响较大，在实际中应该灵活配置。</p>
-<p>第三部分：http 块</p>
-<p>这算是 Nginx 服务器配置中最频繁的部分，代理、缓存和日志定义等绝大多数功能和第三方模块的配置都在这里。</p>
-<p>需要注意的是：http 块也可以包括 http 全局块、server 块。</p>
-<p>①、http 全局块</p>
-<p>http 全局块配置的指令包括文件引入、MIME-TYPE 定义、日志自定义、连接超时时间、单链接请求数上限等。</p>
-<p>②、server 块</p>
-<p>这块和虚拟主机有密切关系，虚拟主机从用户角度看，和一台独立的硬件主机是完全一样的，该技术的产生是为了节省互联网服务器硬件成本。</p>
-<p>每个 http 块可以包括多个 server 块，而每个 server 块就相当于一个虚拟主机。</p>
-<p>而每个 server 块也分为全局 server 块，以及可以同时包含多个 locaton 块。</p>
-<p>1、全局 server 块</p>
-<p>最常见的配置是本虚拟机主机的监听配置和本虚拟主机的名称或 IP 配置。</p>
-<p>2、location 块</p>
-<p>一个 server 块可以配置多个 location 块。</p>
-<p>这块的主要作用是基于 Nginx 服务器接收到的请求字符串（例如 server_name/uri-string），对虚拟主机名称（也可以是 IP 别名）之外的字符串（例如 前面的 /uri-string）进行匹配，对特定的请求进行处理。地址定向、数据缓存和应答控制等功能，还有许多第三方模块的配置也在这里进行。</p>
-<h2 id="Nginx配置反向代理"><a href="#Nginx配置反向代理" class="headerlink" title="Nginx配置反向代理"></a>Nginx配置反向代理</h2><h3 id="Nginx反向代理访问Tomcat服务"><a href="#Nginx反向代理访问Tomcat服务" class="headerlink" title="Nginx反向代理访问Tomcat服务"></a>Nginx反向代理访问Tomcat服务</h3><ol>
-<li>在Linx下安装并启动Tomcat服务器，访问Tomcat服务器<br><img src="https://img-blog.csdnimg.cn/20200703221126739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""><br>配置Nginx反向代理，通过Nginx访问Tomcat服务器<br><img src="https://img-blog.csdnimg.cn/20200703221958786.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""><br>修改配置文件，通过访问Nginx监听的80端口，访问到Tomcat服务器的8080端口<br><img src="https://img-blog.csdnimg.cn/20200703222203503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""><h3 id="使用-nginx-反向代理，根据访问的路径跳转到不同端口的服务中"><a href="#使用-nginx-反向代理，根据访问的路径跳转到不同端口的服务中" class="headerlink" title="使用 nginx 反向代理，根据访问的路径跳转到不同端口的服务中"></a>使用 nginx 反向代理，根据访问的路径跳转到不同端口的服务中</h3>在Tomcat的webapps目录下新增edu文件夹，添加index.html文件，内容如下<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>8080<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></code></pre>
-<img src="https://img-blog.csdnimg.cn/20200703222804206.png" alt=""><br>重新启动一个Tomcat，端口为8082，并在webapps目录下新增vod文件夹，同样添加index.html<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>8081<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></code></pre>
-<img src="https://img-blog.csdnimg.cn/20200703222758402.png" alt=""><br>修改 nginx 的配置文件，新增一个server，实现访问<a href="http://192.168.31.202:9001/edu" target="_blank" rel="noopener">http://192.168.31.202:9001/edu</a> 直接跳转到8080服务，访问 <a href="http://192.168.31.202:9001/vod/" target="_blank" rel="noopener">http://192.168.31.202:9001/vod/</a> 直接跳转到8081服务<br><img src="https://img-blog.csdnimg.cn/20200703223056962.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200703223501830.png" alt=""><br><img src="https://img-blog.csdnimg.cn/20200703223425541.png" alt=""></li>
-</ol>
-<p>location 指令说明：</p>
-<p>该指令用于匹配 URL。语法如下：</p>
+<h3 id="（2）查看nginx进程"><a href="#（2）查看nginx进程" class="headerlink" title="（2）查看nginx进程"></a>（2）查看nginx进程</h3><pre class=" language-shell"><code class="language-shell">ps -ef | grep nginx</code></pre>
+{% qnimg Nginx/00001.jpg %}
+<h3 id="（3）访问Nginx"><a href="#（3）访问Nginx" class="headerlink" title="（3）访问Nginx"></a>（3）访问Nginx</h3><p>输入ip地址，可以访问到下图所示页面<br><img src="https://img-blog.csdnimg.cn/20200703101610268.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
+<h1 id="4、Nginx常用命令和配置文件"><a href="#4、Nginx常用命令和配置文件" class="headerlink" title="4、Nginx常用命令和配置文件"></a>4、Nginx常用命令和配置文件</h1><h2 id="4-1-Nginx常用命令"><a href="#4-1-Nginx常用命令" class="headerlink" title="4.1 Nginx常用命令"></a>4.1 Nginx常用命令</h2><p>以下所有命令，都要在/usr/local/nginx/sbin目录下执行</p>
+<h3 id="（1）启动命令"><a href="#（1）启动命令" class="headerlink" title="（1）启动命令"></a>（1）启动命令</h3><pre class=" language-shell"><code class="language-shell">./nginx  </code></pre>
+<h3 id="（2）停止命令"><a href="#（2）停止命令" class="headerlink" title="（2）停止命令"></a>（2）停止命令</h3><pre class=" language-shell"><code class="language-shell">./nginx -s stop # 快速停止命令，不管有没有正在处理的请求
+./nginx -s quit # 正常停止命令，在退出前完成已经接受的连接请求。</code></pre>
+<h3 id="（3）重启命令"><a href="#（3）重启命令" class="headerlink" title="（3）重启命令"></a>（3）重启命令</h3><pre class=" language-shell"><code class="language-shell">./nginx -s reload</code></pre>
+<h3 id="（4）查看版本"><a href="#（4）查看版本" class="headerlink" title="（4）查看版本"></a>（4）查看版本</h3><pre class=" language-shell"><code class="language-shell">./nginx -v</code></pre>
+<h3 id="（5）查看-Nginx-配置语法的正确性"><a href="#（5）查看-Nginx-配置语法的正确性" class="headerlink" title="（5）查看 Nginx 配置语法的正确性"></a>（5）查看 Nginx 配置语法的正确性</h3><pre class=" language-shell"><code class="language-shell">./nginx -v</code></pre>
+<h2 id="4-2-配置文件"><a href="#4-2-配置文件" class="headerlink" title="4.2 配置文件"></a>4.2 配置文件</h2><p>nginx 安装目录下，其默认的配置文件都放在这个目录的 conf 目录下，而主配置文件nginx.conf 也在其中，后续对 nginx 的使用基本上都是对此配置文件进行相应的修改。</p>
+{% qnimg Nginx/000004.png %}
+<p>根据上图，我们可以很明显的将 nginx.conf 配置文件分为三部分：</p>
+<h3 id="（1）全局块"><a href="#（1）全局块" class="headerlink" title="（1）全局块"></a>（1）全局块</h3><p>从配置文件开始到 events 块之间的内容，主要会设置一些影响 nginx 服务器整体运行的配置指令，主要包括配置运行 Nginx 服务器的用户（组）、允许生成的 worker process 数，进程 PID 存放路径、日志存放路径和类型以及配置文件的引入等。<br>比如图中的</p>
+<pre><code>worker_processes   1</code></pre><p>这是 Nginx 服务器并发处理服务的关键配置，worker_processes 值越大，可以支持的并发处理量也越多，但是会受到硬件、软件等设备的制约</p>
+<h3 id="（2）events-块"><a href="#（2）events-块" class="headerlink" title="（2）events 块"></a>（2）events 块</h3><p>events 块涉及的指令主要影响 Nginx 服务器与用户的网络连接，常用的设置包括是否开启对多 work process 下的网络连接进行序列化，是否允许同时接收多个网络连接，选取哪种事件驱动模型来处理连接请求，每个 word process 可以同时支持的最大连接数等。</p>
+<pre><code>worker_connections  1024;</code></pre><p>上述例子就表示每个 work process 支持的最大连接数为 1024. 这部分的配置对 Nginx 的性能影响较大，在实际中应该灵活配置。</p>
+<h3 id="（3）http-块"><a href="#（3）http-块" class="headerlink" title="（3）http 块"></a>（3）http 块</h3><p>这算是 Nginx 服务器配置中最频繁的部分，代理、缓存和日志定义等绝大多数功能和第三方模块的配置都在这里。</p>
+<p>需要注意的是：http块也可以包括http全局块和server块。</p>
+<h4 id="1）-http-全局块"><a href="#1）-http-全局块" class="headerlink" title="1） http 全局块"></a>1） http 全局块</h4><p>http 全局块配置的指令包括文件引入、MIME-TYPE 定义、日志自定义、连接超时时间、单链接请求数上限等。</p>
+<h4 id="2）-http-server块"><a href="#2）-http-server块" class="headerlink" title="2） http server块"></a>2） http server块</h4><p>这块和虚拟主机有密切关系，虚拟主机从用户角度看，和一台独立的硬件主机是完全一样的，该技术的产生是为了节省互联网服务器硬件成本。每个http 块可以包括多个 server 块，而每个 server 块就相当于一个虚拟主机。而每个 server 块也分为全局server块，以及可以同时包含多个locaton块。</p>
+<p><strong>① 全局server块</strong><br>最常见的配置是本虚拟机主机的监听配置和本虚拟主机的名称或 IP 配置。<br><strong>② location块</strong><br>一个 server 块可以配置多个 location 块。<br>这块的主要作用是基于 Nginx 服务器接收到的请求字符串（例如 server_name/uri-string），对虚拟主机名称（也可以是 IP 别名）之外的字符串（例如 前面的 /uri-string）进行匹配，对特定的请求进行处理。地址定向、数据缓存和应答控制等功能，还有许多第三方模块的配置也在这里进行。</p>
+<h3 id="详细配置文件介绍"><a href="#详细配置文件介绍" class="headerlink" title="详细配置文件介绍"></a>详细配置文件介绍</h3><pre class=" language-conf"><code class="language-conf">#定义Nginx运行的用户和用户组
+user www www; 
+
+#nginx进程数，通常设置成和cpu的数量相等
+worker_processes 4; 
+
+#全局错误日志定义类型，[debug | info | notice | warn | error | crit]
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+
+#进程pid文件
+#pid        logs/nginx.pid;
+
+
+#指定进程可以打开的最大描述符：数目
+#工作模式与连接数上限
+##这个指令是指当一个nginx进程打开的最多文件描述符数目，理论值应该是最多打开文件数（ulimit -n）与nginx进程数相除，但是nginx分配请求并不是那么均匀，所以最好与ulimit -n 的值保持一致。
+#这是因为nginx调度时分配请求到进程并不是那么的均衡，所以假如填写10240，总并发量达到3-4万时就有进程可能超过10240了，这时会返回502错误。
+worker_rlimit_nofile 65535;
+
+
+events {
+    #参考事件模型，use [ kqueue | rtsig | epoll | /dev/poll | select | poll ]; epoll模型
+    #是Linux 2.6以上版本内核中的高性能网络I/O模型，linux建议epoll，如果跑在FreeBSD上面，就用kqueue模型。
+    #补充说明：
+    #与apache相类，nginx针对不同的操作系统，有不同的事件模型
+    #A）标准事件模型
+    #Select、poll属于标准事件模型，如果当前系统不存在更有效的方法，nginx会选择select或poll
+    #B）高效事件模型
+    #Kqueue：使用于FreeBSD 4.1+, OpenBSD 2.9+, NetBSD 2.0 和 MacOS X.使用双处理器的MacOS X系统使用kqueue可能会造成内核崩溃。
+    #Epoll：使用于Linux内核2.6版本及以后的系统。
+    #/dev/poll：使用于Solaris 7 11/99+，HP/UX 11.22+ (eventport)，IRIX 6.5.15+ 和 Tru64 UNIX 5.1A+。
+    #Eventport：使用于Solaris 10。 为了防止出现内核崩溃的问题， 有必要安装安全补丁。
+    use epoll
+
+
+    #单个进程最大连接数（最大连接数=连接数+进程数）
+    #根据硬件调整，和前面工作进程配合起来用，尽量大，但是别把cup跑到100%就行。
+    worker_connections  1024;
+
+    #keepalive 超时时间
+    keepalive_timeout 60;
+
+    #客户端请求头部的缓冲区大小。这个可以根据你的系统分页大小来设置，一般一个请求头的大小不会超过1k，不过由于一般系统分页都要大于1k，所以这里设置为分页大小。
+    #分页大小可以用命令getconf PAGESIZE 取得。
+    #[root@web001 ~]# getconf PAGESIZE
+    #但也有client_header_buffer_size超过4k的情况，但是client_header_buffer_size该值必须设置为“系统分页大小”的整倍数。
+    client_header_buffer_size 4k;
+
+    #这个将为打开文件指定缓存，默认是没有启用的，max指定缓存数量，建议和打开文件数一致，inactive是指经过多长时间文件没被请求后删除缓存。
+    open_file_cache max=65535 inactive=60s;
+
+
+    #这个是指多长时间检查一次缓存的有效信息。
+    #语法:open_file_cache_valid time 默认值:open_file_cache_valid 60 使用字段:http, server, location 这个指令指定了何时需要检查open_file_cache中缓存项目的有效信息.
+    open_file_cache_valid 80s;
+
+
+    #open_file_cache指令中的inactive参数时间内文件的最少使用次数，如果超过这个数字，文件描述符一直是在缓存中打开的，如上例，如果有一个文件在inactive时间内一次没被使用，它将被移除。
+    #语法:open_file_cache_min_uses number 默认值:open_file_cache_min_uses 1 使用字段:http, server, location  这个指令指定了在open_file_cache指令无效的参数中一定的时间范围内可以使用的最小文件数,如果使用更大的值,文件描述符在cache中总是打开状态.
+    open_file_cache_min_uses 1;
+
+    #语法:open_file_cache_errors on | off 默认值:open_file_cache_errors off 使用字段:http, server, location 这个指令指定是否在搜索一个文件是记录cache错误.
+    open_file_cache_errors on;
+}
+
+
+#设定http服务器，利用它的反向代理功能提供负载均衡支持
+http{
+    #文件扩展名与文件类型映射表
+    include mime.types;
+
+    #默认文件类型
+    default_type application/octet-stream;
+
+    #默认编码
+    charset utf-8;
+
+    #服务器名字的hash表大小
+    #保存服务器名字的hash表是由指令server_names_hash_max_size 和server_names_hash_bucket_size所控制的。参数hash bucket size总是等于hash表的大小，并且是一路处理器缓存大小的倍数。在减少了在内存中的存取次数后，使在处理器中加速查找hash表键值成为可能。如果hash bucket size等于一路处理器缓存的大小，那么在查找键的时候，最坏的情况下在内存中查找的次数为2。第一次是确定存储单元的地址，第二次是在存储单元中查找键 值。因此，如果Nginx给出需要增大hash max size 或 hash bucket size的提示，那么首要的是增大前一个参数的大小.
+    server_names_hash_bucket_size 128;
+
+    #客户端请求头部的缓冲区大小。这个可以根据你的系统分页大小来设置，一般一个请求的头部大小不会超过1k，不过由于一般系统分页都要大于1k，所以这里设置为分页大小。分页大小可以用命令getconf PAGESIZE取得。
+    client_header_buffer_size 32k;
+
+    #客户请求头缓冲大小。nginx默认会用client_header_buffer_size这个buffer来读取header值，如果header过大，它会使用large_client_header_buffers来读取。
+    large_client_header_buffers 4 64k;
+
+    #设定通过nginx上传文件的大小
+    client_max_body_size 8m;
+
+    #开启高效文件传输模式，sendfile指令指定nginx是否调用sendfile函数来输出文件，对于普通应用设为 on，如果用来进行下载等应用磁盘IO重负载应用，可设置为off，以平衡磁盘与网络I/O处理速度，降低系统的负载。注意：如果图片显示不正常把这个改成off。
+    #sendfile指令指定 nginx 是否调用sendfile 函数（zero copy 方式）来输出文件，对于普通应用，必须设为on。如果用来进行下载等应用磁盘IO重负载应用，可设置为off，以平衡磁盘与网络IO处理速度，降低系统uptime。
+    sendfile on;
+
+     #开启目录列表访问，合适下载服务器，默认关闭。
+    autoindex on;
+
+      #此选项允许或禁止使用socke的TCP_CORK的选项，此选项仅在使用sendfile的时候使用
+    tcp_nopush on;
+
+    tcp_nodelay on;
+
+    #长连接超时时间，单位是秒
+    keepalive_timeout 120;
+
+    #FastCGI相关参数是为了改善网站的性能：减少资源占用，提高访问速度。下面参数看字面意思都能理解。
+    fastcgi_connect_timeout 300;
+    fastcgi_send_timeout 300;
+    fastcgi_read_timeout 300;
+    fastcgi_buffer_size 64k;
+    fastcgi_buffers 4 64k;
+    fastcgi_busy_buffers_size 128k;
+    fastcgi_temp_file_write_size 128k;
+
+    #gzip模块设置
+    gzip on; #开启gzip压缩输出
+    gzip_min_length 1k;    #最小压缩文件大小
+    gzip_buffers 4 16k;    #压缩缓冲区
+    gzip_http_version 1.0; #压缩版本（默认1.1，前端如果是squid2.5请使用1.0）
+    gzip_comp_level 2;     #压缩等级
+    gzip_types text/plain application/x-javascript text/css application/xml;    #压缩类型，默认就已经包含textml，所以下面就不用再写了，写上去也不会有问题，但是会有一个warn。
+    gzip_vary on;
+
+    #开启限制IP连接数的时候需要使用
+    #limit_zone crawler $binary_remote_addr 10m;
+
+
+    #负载均衡配置
+    upstream piao.jd.com {
+
+        #upstream的负载均衡，weight是权重，可以根据机器配置定义权重。weigth参数表示权值，权值越高被分配到的几率越大。
+        server 192.168.80.121:80 weight=3;
+        server 192.168.80.122:80 weight=2;
+        server 192.168.80.123:80 weight=3;
+
+        #nginx的upstream目前支持4种方式的分配
+        #1、轮询（默认）
+        #每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。
+        #2、weight
+        #指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。
+        #例如：
+        #upstream bakend {
+        #    server 192.168.0.14 weight=10;
+        #    server 192.168.0.15 weight=10;
+        #}
+        #2、ip_hash
+        #每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。
+        #例如：
+        #upstream bakend {
+        #    ip_hash;
+        #    server 192.168.0.14:88;
+        #    server 192.168.0.15:80;
+        #}
+        #3、fair（第三方）
+        #按后端服务器的响应时间来分配请求，响应时间短的优先分配。
+        #upstream backend {
+        #    server server1;
+        #    server server2;
+        #    fair;
+        #}
+        #4、url_hash（第三方）
+        #按访问url的hash结果来分配请求，使每个url定向到同一个后端服务器，后端服务器为缓存时比较有效。
+        #例：在upstream中加入hash语句，server语句中不能写入weight等其他的参数，hash_method是使用的hash算法
+        #upstream backend {
+        #    server squid1:3128;
+        #    server squid2:3128;
+        #    hash $request_uri;
+        #    hash_method crc32;
+        #}
+
+        #tips:
+        #upstream bakend
+        #在需要使用负载均衡的server中增加 proxy_pass http://bakend/;
+
+        #每个设备的状态设置为:
+        #1.down表示单前的server暂时不参与负载
+        #2.weight为weight越大，负载的权重就越大。
+        #3.max_fails：允许请求失败的次数默认为1.当超过最大次数时，返回proxy_next_upstream模块定义的错误
+        #4.fail_timeout:max_fails次失败后，暂停的时间。
+        #5.backup： 其它所有的非backup机器down或者忙的时候，请求backup机器。所以这台机器压力会最轻。
+
+        #nginx支持同时设置多组的负载均衡，用来给不用的server来使用。
+        #client_body_in_file_only设置为On 可以讲client post过来的数据记录到文件中用来做debug
+        #client_body_temp_path设置记录文件的目录 可以设置最多3层目录
+        #location对URL进行匹配.可以进行重定向或者进行新的代理 负载均衡
+    }
+
+
+    #虚拟主机的配置
+    server {
+        #监听端口
+        listen 80;
+
+        #域名可以有多个，用空格隔开
+        server_name www.jd.com jd.com;
+        #默认入口文件名称
+        index index.html index.htm index.php;
+        root /data/www/jd;
+
+        #对******进行负载均衡
+        location ~ .*.(php|php5)?$
+        {
+            fastcgi_pass 127.0.0.1:9000;
+            fastcgi_index index.php;
+            include fastcgi.conf;
+        }
+
+        #图片缓存时间设置
+        location ~ .*.(gif|jpg|jpeg|png|bmp|swf)$
+        {
+            expires 10d;
+        }
+
+        #JS和CSS缓存时间设置
+        location ~ .*.(js|css)?$
+        {
+            expires 1h;
+        }
+
+        #日志格式设定
+        #$remote_addr与$http_x_forwarded_for用以记录客户端的ip地址；
+        #$remote_user：用来记录客户端用户名称；
+        #$time_local： 用来记录访问时间与时区；
+        #$request： 用来记录请求的url与http协议；
+        #$status： 用来记录请求状态；成功是200，
+        #$body_bytes_sent ：记录发送给客户端文件主体内容大小；
+        #$http_referer：用来记录从那个页面链接访问过来的；
+        #$http_user_agent：记录客户浏览器的相关信息；
+        #通常web服务器放在反向代理的后面，这样就不能获取到客户的IP地址了，通过$remote_add拿到的IP地址是反向代理服务器的iP地址。反向代理服务器在转发请求的http头信息中，可以增加x_forwarded_for信息，用以记录原有客户端的IP地址和原来客户端的请求的服务器地址。
+        log_format access '$remote_addr - $remote_user [$time_local] "$request" '
+        '$status $body_bytes_sent "$http_referer" '
+        '"$http_user_agent" $http_x_forwarded_for';
+
+        #定义本虚拟主机的访问日志
+        access_log  /usr/local/nginx/logs/host.access.log  main;
+        access_log  /usr/local/nginx/logs/host.access.404.log  log404;
+
+        #对 "/connect-controller" 启用反向代理
+        location /connect-controller {
+            proxy_pass http://127.0.0.1:88; #请注意此处端口号不能与虚拟主机监听的端口号一样（也就是server监听的端口）
+            proxy_redirect off;
+            proxy_set_header X-Real-IP $remote_addr;
+
+            #后端的Web服务器可以通过X-Forwarded-For获取用户真实IP
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+            #以下是一些反向代理的配置，可选。
+            proxy_set_header Host $host;
+
+            #允许客户端请求的最大单文件字节数
+            client_max_body_size 10m;
+
+            #缓冲区代理缓冲用户端请求的最大字节数，
+            #如果把它设置为比较大的数值，例如256k，那么，无论使用firefox还是IE浏览器，来提交任意小于256k的图片，都很正常。如果注释该指令，使用默认的client_body_buffer_size设置，也就是操作系统页面大小的两倍，8k或者16k，问题就出现了。
+            #无论使用firefox4.0还是IE8.0，提交一个比较大，200k左右的图片，都返回500 Internal Server Error错误
+            client_body_buffer_size 128k;
+
+            #表示使nginx阻止HTTP应答代码为400或者更高的应答。
+            proxy_intercept_errors on;
+
+            #后端服务器连接的超时时间_发起握手等候响应超时时间
+            #nginx跟后端服务器连接超时时间(代理连接超时)
+            proxy_connect_timeout 90;
+
+            #后端服务器数据回传时间(代理发送超时)
+            #后端服务器数据回传时间_就是在规定时间之内后端服务器必须传完所有的数据
+            proxy_send_timeout 90;
+
+            #连接成功后，后端服务器响应时间(代理接收超时)
+            #连接成功后_等候后端服务器响应时间_其实已经进入后端的排队之中等候处理（也可以说是后端服务器处理请求的时间）
+            proxy_read_timeout 90;
+
+            #设置代理服务器（nginx）保存用户头信息的缓冲区大小
+            #设置从被代理服务器读取的第一部分应答的缓冲区大小，通常情况下这部分应答中包含一个小的应答头，默认情况下这个值的大小为指令proxy_buffers中指定的一个缓冲区的大小，不过可以将其设置为更小
+            proxy_buffer_size 4k;
+
+            #proxy_buffers缓冲区，网页平均在32k以下的设置
+            #设置用于读取应答（来自被代理服务器）的缓冲区数目和大小，默认情况也为分页大小，根据操作系统的不同可能是4k或者8k
+            proxy_buffers 4 32k;
+
+            #高负荷下缓冲大小（proxy_buffers*2）
+            proxy_busy_buffers_size 64k;
+
+            #设置在写入proxy_temp_path时数据的大小，预防一个工作进程在传递文件时阻塞太长
+            #设定缓存文件夹大小，大于这个值，将从upstream服务器传
+            proxy_temp_file_write_size 64k;
+        }
+
+        #本地动静分离反向代理配置
+        #所有jsp的页面均交由tomcat或resin处理
+        location ~ .(jsp|jspx|do)?$ {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://127.0.0.1:8080;
+        }
+    }
+}</code></pre>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Nginx 配置文件主要分成四部分：main（全局设置）、server（主机设置）、upstream（上游服务器设置，主要为反向代理、负载均衡相关配置）和 location（URL匹配特定位置后的设置）。</p>
+<p>main 部分设置的指令影响其他所有部分的设置；</p>
+<p>server 部分的指令主要用于制定虚拟主机域名、IP 和端口号；</p>
+<p>upstream 的指令用于设置一系列的后端服务器，设置反向代理及后端服务器的负载均衡；</p>
+<p>location 部分用于匹配网页位置（比如，根目录“/”，“/images”，等等）。</p>
+<p>他们之间的关系：server 继承 main，location 继承 server；upstream 既不会继承指令也不会被继承。</p>
+<h1 id="5、Nginx配置实例-反向代理"><a href="#5、Nginx配置实例-反向代理" class="headerlink" title="5、Nginx配置实例-反向代理"></a>5、Nginx配置实例-反向代理</h1><h2 id="5-1-反向代理实例一"><a href="#5-1-反向代理实例一" class="headerlink" title="5.1 反向代理实例一"></a>5.1 反向代理实例一</h2><h3 id="（1）实现效果"><a href="#（1）实现效果" class="headerlink" title="（1）实现效果"></a>（1）实现效果</h3><p>使用 nginx 反向代理，访问nginx地址直接跳转到Tomcat服务器</p>
+<blockquote>
+<p>访问 ip 192.168.31.202 直接跳转到Tomcat 192.168.31.202:8080</p>
+</blockquote>
+<h3 id="（2）实现过程"><a href="#（2）实现过程" class="headerlink" title="（2）实现过程"></a>（2）实现过程</h3><p>1.在Linx下安装并启动Tomcat服务器，访问Tomcat服务器<br><img src="https://img-blog.csdnimg.cn/20200703221126739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>2.配置Nginx反向代理，通过Nginx访问Tomcat服务器<br><img src="https://img-blog.csdnimg.cn/20200703221958786.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""><br>3.修改配置文件，通过访问Nginx监听的80端口，访问到Tomcat服务器的8080端口<br><img src="https://img-blog.csdnimg.cn/20200703222203503.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="5-2-反向代理实例一"><a href="#5-2-反向代理实例一" class="headerlink" title="5.2 反向代理实例一"></a>5.2 反向代理实例一</h2><h3 id="（1）实现效果-1"><a href="#（1）实现效果-1" class="headerlink" title="（1）实现效果"></a>（1）实现效果</h3><p>使用nginx反向代理，根据访问的路径跳转到不同端口的服务中</p>
+<blockquote>
+<p>访问 <a href="http://192.168.31.202:9001/edu/index.html" target="_blank" rel="noopener">http://192.168.31.202:9001/edu/index.html</a> 直接跳转到 192.168.31.202:8081/edu/index.html<br>访问 <a href="http://192.168.31.202:9001/vod/index.html" target="_blank" rel="noopener">http://192.168.31.202:9001/vod/index.html</a> 直接跳转到 192.168.31.202:8082/edu/index.html</p>
+</blockquote>
+<h3 id="（2）实现过程-1"><a href="#（2）实现过程-1" class="headerlink" title="（2）实现过程"></a>（2）实现过程</h3><p>1.在Tomcat的webapps目录下新增edu文件夹，添加index.html文件，内容如下</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>8080<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200703222804206.png" alt=""></p>
+<p>2.重新启动一个Tomcat，端口为8081，并在webapps目录下新增vod文件夹，同样添加index.html</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>8081<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200703222758402.png" alt=""></p>
+<p>3.修改 nginx 的配置文件，新增一个server，实现访问<a href="http://192.168.31.202:9001/edu/" target="_blank" rel="noopener">http://192.168.31.202:9001/edu/</a>  直接跳转到8080服务，访问 <a href="http://192.168.31.202:9001/vod/" target="_blank" rel="noopener">http://192.168.31.202:9001/vod/</a> 直接跳转到8081服务</p>
+<pre class=" language-conf"><code class="language-conf">    server {
+          listen       80;
+          server_name  192.168.31.202;
+
+          location ~ /edu/ {
+              proxy_pass  http://192.168.31.202:8080;
+          }
+
+          location ~ /vod/ {
+              proxy_pass  http://192.168.31.202:8081;
+          }
+
+      }</code></pre>
+<p>4.访问9001端口</p>
+<p><img src="https://img-blog.csdnimg.cn/20200703223501830.png" alt=""><br><img src="https://img-blog.csdnimg.cn/20200703223425541.png" alt=""></p>
+<h2 id="5-3-location指令说明："><a href="#5-3-location指令说明：" class="headerlink" title="5.3 location指令说明："></a>5.3 location指令说明：</h2><p>该指令用于匹配 URL。语法如下：</p>
 <p>1、= ：用于不含正则表达式的 uri 前，要求请求字符串与 uri 严格匹配，如果匹配成功，就停止继续向下搜索并立即处理该请求。</p>
 <p>2、~：用于表示 uri 包含正则表达式，并且区分大小写。</p>
 <p>3、~*：用于表示 uri 包含正则表达式，并且不区分大小写。</p>
 <p>4、^~：用于不含正则表达式的 uri 前，要求 Nginx 服务器找到标识 uri 和请求字符串匹配度最高的 location 后，立即使用此 location 处理请求，而不再使用 location 块中的正则 uri 和请求字符串做匹配。</p>
-<p>注意：如果 uri 包含正则表达式，则必须要有 ~ 或者 ~* 标识。</p>
-<h2 id="Nginx配置负载均衡"><a href="#Nginx配置负载均衡" class="headerlink" title="Nginx配置负载均衡"></a>Nginx配置负载均衡</h2><p>部署两台Tomcat服务器，通过Nginx实现负载均衡，将访问平均到两台服务器上。<br>1、部署服务器<br><img src="https://img-blog.csdnimg.cn/2020070420591942.png" alt=""><br><img src="https://img-blog.csdnimg.cn/20200704205945446.png" alt=""><br>2、修改配置文件<br><img src="https://img-blog.csdnimg.cn/20200704210628630.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""><br>3、nginx 分配服务器策略</p>
-<p>第一种 轮询（默认）</p>
+<p><strong>注意</strong>：如果 uri 包含正则表达式，则必须要有 ~ 或者 ~* 标识。</p>
+<h1 id="6、Nginx配置实例-负载均衡"><a href="#6、Nginx配置实例-负载均衡" class="headerlink" title="6、Nginx配置实例-负载均衡"></a>6、Nginx配置实例-负载均衡</h1><h2 id="6-1-负载均衡"><a href="#6-1-负载均衡" class="headerlink" title="6.1 负载均衡"></a>6.1 负载均衡</h2><p>客户端发送多个请求到服务器，服务器处理请求，有一些可能要与数据库进行交互，服务器处理完毕后，再将结果返回给客户端。</p>
+<p>这种架构模式对于早期的系统相对单一，并发请求相对较少的情况下是比较适合的，成本也低。但是随着信息数量的不断增长，访问量和数据量的飞速增长，以及系统业务的复杂度增加，这种架构会造成服务器相应客户端的请求日益缓慢，并发量特别大的时候，还容易造成服务器直接崩溃。很明显这是由于服务器性能的瓶颈造成的问题，那么如何解决这种情况呢？</p>
+<p>我们首先想到的可能是升级服务器的配置，比如提高 CPU 执行频率，加大内存等提高机器的物理性能来解决此问题，但是我们知道摩尔定律的日益失效，硬件的性能提升已经不能满足日益提升的需求了。最明显的一个例子，天猫双十一当天，某个热销商品的瞬时访问量是极其庞大的，那么类似上面的系统架构，将机器都增加到现有的顶级物理配置，都是不能够满足需求的。那么怎么办呢？</p>
+<p>上面的分析我们去掉了增加服务器物理配置来解决问题的办法，也就是说纵向解决问题的办法行不通了，那么横向增加服务器的数量呢？这时候集群的概念产生了，单个服务器解决不了，我们增加服务器的数量，然后将请求分发到各个服务器上，将原先请求集中到单个服务器上的情况改为将请求分发到多个服务器上，将负载分发到不同的服务器，也就是我们所说的负载均衡<br><img src="https://img-blog.csdnimg.cn/20200706220045249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="6-2-Nginx配置负载均衡"><a href="#6-2-Nginx配置负载均衡" class="headerlink" title="6.2 Nginx配置负载均衡"></a>6.2 Nginx配置负载均衡</h2><p>部署两台Tomcat服务器，通过Nginx实现负载均衡，将访问平均到两台服务器上。</p>
+<p>（1）部署服务器</p>
+<p><img src="https://img-blog.csdnimg.cn/2020070420591942.png" alt=""><br><img src="https://img-blog.csdnimg.cn/20200704205945446.png" alt=""></p>
+<p>（2）修改配置文件</p>
+<pre class=" language-conf"><code class="language-conf">    upstream myservers{
+        server 192.168.31.202:8080;
+        server 192.168.31.202:8081;
+    }
+
+    server {
+        listen       80;
+        server_name  192.168.31.202;
+
+        location / {
+            proxy_pass    http://myservers;
+            root   html;
+            index  index.html index.htm;
+        }
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+</code></pre>
+<h2 id="6-3-Nginx分配服务器策略"><a href="#6-3-Nginx分配服务器策略" class="headerlink" title="6.3 Nginx分配服务器策略"></a>6.3 Nginx分配服务器策略</h2><p>第一种 轮询（默认）</p>
 <p>每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器 down 掉，能自动剔除。</p>
 <pre class=" language-conf"><code class="language-conf">upstream backserver { 
     server 192.168.31.202:8080; 
@@ -543,14 +887,42 @@ make && make install</code></pre>
   } </code></pre>
 </li>
 </ul>
-<h2 id="Nginx配置动静分离"><a href="#Nginx配置动静分离" class="headerlink" title="Nginx配置动静分离"></a>Nginx配置动静分离</h2><p><img src="https://img-blog.csdnimg.cn/20200704212243623.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>通过 location 指定不同的后缀名实现不同的请求转发。通过 expires 参数设置，可以使浏览器缓存过期时间，减少与服务器之前的请求和流量。具体 Expires 定义：是给一个资源设定一个过期时间，也就是说无需去服务端验证，直接通过浏览器自身确认是否过期即可，所以不会产生额外的流量。此种方法非常适合不经常变动的资源。（如果经常更新的文件，不建议使用 Expires 来缓存），我这里设置 3d，表示在这 3 天之内访问这个 URL，发送一个请求，比对服务器该文件最后更新时间没有变化，则不会从服务器抓取，返回状态码 304，如果有修改，则直接从服务器重新下载，返回状态码 200。</p>
-<p>在Linux下放置静态资源<br><img src="https://img-blog.csdnimg.cn/20200704213722173.png" alt=""><br>修改配置文件<br><img src="https://img-blog.csdnimg.cn/20200704214717163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""><br>访问静态资源，如果设置autoindex on可以展示静态资源列表<br><img src="https://img-blog.csdnimg.cn/20200704214818297.png" alt="v"><br><img src="https://img-blog.csdnimg.cn/20200704215216347.png" alt=""></p>
-<h2 id="配置高可用Nginx集群"><a href="#配置高可用Nginx集群" class="headerlink" title="配置高可用Nginx集群"></a>配置高可用Nginx集群</h2><p><img src="https://img-blog.csdnimg.cn/20200704222334774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>1、部署两台 nginx 服务器，并安装keepalived<br>使用 yum 命令进行安装</p>
+<h1 id="7、-Nginx配置实例-动静分离"><a href="#7、-Nginx配置实例-动静分离" class="headerlink" title="7、 Nginx配置实例-动静分离"></a>7、 Nginx配置实例-动静分离</h1><h2 id="7-1-动静分离"><a href="#7-1-动静分离" class="headerlink" title="7.1 动静分离"></a>7.1 动静分离</h2><p>为了加快网站的解析速度，可以把动态页面和静态页面由不同的服务器来解析，加快解析速度。降低原来单个服务器的压力。<br><img src="https://img-blog.csdnimg.cn/20200704212243623.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="7-2-动静分离配置"><a href="#7-2-动静分离配置" class="headerlink" title="7.2 动静分离配置"></a>7.2 动静分离配置</h2><p>通过 location 指定不同的后缀名实现不同的请求转发。通过 expires 参数设置，可以使浏览器缓存过期时间，减少与服务器之前的请求和流量。具体 expires 定义：是给一个资源设定一个过期时间，也就是说无需去服务端验证，直接通过浏览器自身确认是否过期即可，所以不会产生额外的流量。此种方法非常适合不经常变动的资源。（如果经常更新的文件，不建议使用 expires 来缓存），我这里设置 3d，表示在这 3 天之内访问这个 URL，发送一个请求，比对服务器该文件最后更新时间没有变化，则不会从服务器抓取，返回状态码 304，如果有修改，则直接从服务器重新下载，返回状态码 200。</p>
+<p>在Linux data目录下放置静态资源<br><img src="https://img-blog.csdnimg.cn/20200704213722173.png" alt=""></p>
+<p>修改配置文件<br><img src="https://img-blog.csdnimg.cn/20200704214717163.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
+<pre><code>server {
+    listen       80;
+    server_name  192.168.31.202;
+
+    location / {
+        proxy_pass    http://myservers;
+        root   html;
+        index  index.html index.htm;
+    }
+    location /www/ {
+        root   /data/;
+        expires 3d;
+        index  index.html index.htm;
+    }
+    location /images/ {
+        root   /data/;
+        index  index.html index.htm;
+        autoindex    on;
+        expires 3h;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+}
+</code></pre><p>访问静态资源，如果设置autoindex on可以展示静态资源列表<br><img src="https://img-blog.csdnimg.cn/20200704214818297.png" alt="v"><br><img src="https://img-blog.csdnimg.cn/20200704215216347.png" alt=""><br>设置<code>autoindex  on</code>可以访问静态资源路径展示列表，如图一所示</p>
+<h1 id="8、Nginx高可用集群"><a href="#8、Nginx高可用集群" class="headerlink" title="8、Nginx高可用集群"></a>8、Nginx高可用集群</h1><h2 id="8-1-Keepalived-Nginx-高可用集群（主从模式）"><a href="#8-1-Keepalived-Nginx-高可用集群（主从模式）" class="headerlink" title="8.1 Keepalived+Nginx 高可用集群（主从模式）"></a>8.1 Keepalived+Nginx 高可用集群（主从模式）</h2><p><img src="https://img-blog.csdnimg.cn/20200704222334774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="8-2-配置高可用集群"><a href="#8-2-配置高可用集群" class="headerlink" title="8.2 配置高可用集群"></a>8.2 配置高可用集群</h2><h3 id="（1）部署两台-nginx-服务器，并安装keepalived"><a href="#（1）部署两台-nginx-服务器，并安装keepalived" class="headerlink" title="（1）部署两台 nginx 服务器，并安装keepalived"></a>（1）部署两台 nginx 服务器，并安装keepalived</h3><p>安装keepalived</p>
 <pre class=" language-shell"><code class="language-shell">yum install keepalived –y</code></pre>
-<p>安装之后，在 etc 里面生成目录 keepalived，有文件 keepalived.conf<br><img src="https://img-blog.csdnimg.cn/20200704222848610.png" alt=""><br>修改/etc/keepalived/keepalivec.conf 配置文件</p>
-<pre class=" language-json"><code class="language-json">global_defs <span class="token punctuation">{</span>
+<h3 id="（2）安装之后，在-etc-里面生成目录-keepalived，有文件-keepalived-conf"><a href="#（2）安装之后，在-etc-里面生成目录-keepalived，有文件-keepalived-conf" class="headerlink" title="（2）安装之后，在 etc 里面生成目录 keepalived，有文件 keepalived.conf"></a>（2）安装之后，在 etc 里面生成目录 keepalived，有文件 keepalived.conf</h3><p><img src="https://img-blog.csdnimg.cn/20200704222848610.png" alt=""></p>
+<h3 id="（3）修改-etc-keepalived-keepalivec-conf-配置文件"><a href="#（3）修改-etc-keepalived-keepalivec-conf-配置文件" class="headerlink" title="（3）修改/etc/keepalived/keepalivec.conf 配置文件"></a>（3）修改/etc/keepalived/keepalivec.conf 配置文件</h3><pre class=" language-json"><code class="language-json">global_defs <span class="token punctuation">{</span>
    notification_email <span class="token punctuation">{</span>
      acassen@firewall.loc
      failover@firewall.loc
@@ -585,21 +957,18 @@ vrrp_instance VI_1 <span class="token punctuation">{</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>在/usr/local/src 添加检测脚本nginx_check.sh</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<h3 id="（4）在-usr-local-src-添加检测脚本nginx-check-sh"><a href="#（4）在-usr-local-src-添加检测脚本nginx-check-sh" class="headerlink" title="（4）在/usr/local/src 添加检测脚本nginx_check.sh"></a>（4）在/usr/local/src 添加检测脚本nginx_check.sh</h3><pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
 A<span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">ps</span> -C nginx –no-header <span class="token operator">|</span><span class="token function">wc</span> -l<span class="token variable">`</span></span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$A</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
-/usr/local/nginx/sbin/nginx
-<span class="token function">sleep</span> 2
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable"><span class="token variable">`</span><span class="token function">ps</span> -C nginx --no-header <span class="token operator">|</span><span class="token function">wc</span> -l<span class="token variable">`</span></span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
-<span class="token function">killall</span> keepalived
-<span class="token keyword">fi</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$A</span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">then</span> /usr/local/nginx/sbin/nginx
+    <span class="token function">sleep</span> 2
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable"><span class="token variable">`</span><span class="token function">ps</span> -C nginx --no-header <span class="token operator">|</span><span class="token function">wc</span> -l<span class="token variable">`</span></span> -eq 0 <span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">then</span> <span class="token function">killall</span> keepalived
+    <span class="token keyword">fi</span>
 <span class="token keyword">fi</span></code></pre>
-<p>（3）把两台服务器上 nginx 和 keepalived 启动</p>
-<p>启动 nginx：./nginx</p>
-<p>启动 keepalived：systemctl start keepalived.service</p>
-<p>5、最终测试</p>
-<p>（1）在浏览器地址栏输入 虚拟 ip 地址 192.168.17.50</p>
+<h3 id="（5）把两台服务器上-nginx-和-keepalived-启动"><a href="#（5）把两台服务器上-nginx-和-keepalived-启动" class="headerlink" title="（5）把两台服务器上 nginx 和 keepalived 启动"></a>（5）把两台服务器上 nginx 和 keepalived 启动</h3><p>启动 nginx：</p>
+<pre><code>./nginx</code></pre><p>启动 keepalived：</p>
+<pre><code>systemctl start keepalived.service</code></pre><h3 id="（6）最终测试"><a href="#（6）最终测试" class="headerlink" title="（6）最终测试"></a>（6）最终测试</h3><p>在浏览器地址栏输入虚拟地址ip 192.168.17.50<br>把主服务器nginx和keepalived停止，再次输入192.168.17.50</p>
 <h2 id="Nginx原理解析"><a href="#Nginx原理解析" class="headerlink" title="Nginx原理解析"></a>Nginx原理解析</h2><p>1、master和worker<br><img src="https://img-blog.csdnimg.cn/20200706155224454.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
 <p>2、worker如何进行工作的<br><img src="https://img-blog.csdnimg.cn/20200706155234294.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt=""></p>
 <p>3、一个master和多个woker的好处<br>(1) 可以使用nginx -s reload热部署。</p>
@@ -923,16 +1292,16 @@ worker_cpu_affinity 00000001 00000010 00000100 00001000
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="Nginx学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/wangmx996/wangmx996.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="Nginx入门">
                         
-                        <span class="card-title">Nginx学习笔记</span>
+                        <span class="card-title">Nginx入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Nginx是什么Nginx是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。
-Nginx是一款轻量级的Web服务器/反向代理服务器以及电子邮件代理服务器，并在一个BSD-like协议下发行。由俄罗斯的程
+                            https://github.com/krislinzhao/StudyNotes/blob/master/Nginx/01-Nginx%E7%AE%80%E4%BB%8B.md
+1、什么是NginxNginx (“engine x”) 是
                         
                     </div>
                     <div class="publish-info">
