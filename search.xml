@@ -85,31 +85,6 @@
     
     
     <entry>
-      <title>Docker入门：（八）本地镜像发布到阿里云</title>
-      <link href="/2020/06/26/docker/docker-ru-men-ba-ben-di-jing-xiang-fa-bu-dao-a-li-yun/"/>
-      <url>/2020/06/26/docker/docker-ru-men-ba-ben-di-jing-xiang-fa-bu-dao-a-li-yun/</url>
-      
-        <content type="html"><![CDATA[<h2 id="创建阿里云仓库"><a href="#创建阿里云仓库" class="headerlink" title="创建阿里云仓库"></a>创建阿里云仓库</h2><p><img src="https://img-blog.csdnimg.cn/20200405114553431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200405114615829.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200405114724859.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200405114730452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200405114859773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200405114924936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id="阿里云操作指南"><a href="#阿里云操作指南" class="headerlink" title="阿里云操作指南"></a>阿里云操作指南</h2><ol><li><p>登录阿里云Docker Registry</p><pre class=" language-java"><code class="language-java"> $ sudo docker login <span class="token operator">--</span>username<span class="token operator">=</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> registry<span class="token punctuation">.</span>cn<span class="token operator">-</span>hangzhou<span class="token punctuation">.</span>aliyuncs<span class="token punctuation">.</span>com</code></pre><p> 用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。</p><p> 您可以在访问凭证页面修改凭证密码。</p></li><li><p>从Registry中拉取镜像</p><pre class=" language-java"><code class="language-java"> $ sudo docker pull registry<span class="token punctuation">.</span>cn<span class="token operator">-</span>hangzhou<span class="token punctuation">.</span>aliyuncs<span class="token punctuation">.</span>com<span class="token operator">/</span>wangmx_s<span class="token operator">/</span>wangmx<span class="token operator">:</span><span class="token punctuation">[</span>镜像版本号<span class="token punctuation">]</span></code></pre></li><li><p>将镜像推送到Registry</p><pre class=" language-java"><code class="language-java"> $ sudo docker login <span class="token operator">--</span>username<span class="token operator">=</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> registry<span class="token punctuation">.</span>cn<span class="token operator">-</span>hangzhou<span class="token punctuation">.</span>aliyuncs<span class="token punctuation">.</span>com $ sudo docker tag <span class="token punctuation">[</span>ImageId<span class="token punctuation">]</span> registry<span class="token punctuation">.</span>cn<span class="token operator">-</span>hangzhou<span class="token punctuation">.</span>aliyuncs<span class="token punctuation">.</span>com<span class="token operator">/</span>wangmx_s<span class="token operator">/</span>wangmx<span class="token operator">:</span><span class="token punctuation">[</span>镜像版本号<span class="token punctuation">]</span> $ sudo docker push registry<span class="token punctuation">.</span>cn<span class="token operator">-</span>hangzhou<span class="token punctuation">.</span>aliyuncs<span class="token punctuation">.</span>com<span class="token operator">/</span>wangmx_s<span class="token operator">/</span>wangmx<span class="token operator">:</span><span class="token punctuation">[</span>镜像版本号<span class="token punctuation">]</span></code></pre><p> 请根据实际镜像信息替换示例中的[ImageId]和[镜像版本号]参数。</p></li><li><p>选择合适的镜像仓库地址<br>从ECS推送镜像时，可以选择使用镜像仓库内网地址。推送速度将得到提升并且将不会损耗您的公网流量。</p><p> 如果您使用的机器位于VPC网络，请使用 registry-vpc.cn-hangzhou.aliyuncs.com 作为Registry的域名登录，并作为镜像命名空间前缀。</p></li></ol><h2 id="将本地镜像上传阿里云"><a href="#将本地镜像上传阿里云" class="headerlink" title="将本地镜像上传阿里云"></a>将本地镜像上传阿里云</h2><p>我们以自定义得centos为例<br><img src="https://img-blog.csdnimg.cn/20200405120542810.png" alt="在这里插入图片描述"></p><h4 id="commit获得一个新的版本镜像"><a href="#commit获得一个新的版本镜像" class="headerlink" title="commit获得一个新的版本镜像"></a>commit获得一个新的版本镜像</h4><p><img src="https://img-blog.csdnimg.cn/20200405121120800.png" alt="在这里插入图片描述"><br>根据上面阿里云操作指南，将mycentos:1.0提交到阿里云<br><img src="https://img-blog.csdnimg.cn/20200405123326100.png" alt="在这里插入图片描述"><br>上传成功<br><img src="https://img-blog.csdnimg.cn/20200405123245427.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>从阿里云拉去镜像到本地<br><img src="https://img-blog.csdnimg.cn/20200405123210888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fhd214MTIz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Docker </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Docker </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Docker入门：（七）Docker安装Mysql</title>
       <link href="/2020/06/26/docker/docker-ru-men-qi-docker-an-zhuang-mysql/"/>
       <url>/2020/06/26/docker/docker-ru-men-qi-docker-an-zhuang-mysql/</url>
